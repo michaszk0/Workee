@@ -205,6 +205,30 @@ app.register = function (params){
     }
 }
 
+app.setNews = function (params){
+    app.showLoadingPage();
+    if ($('#addNewsButton').attr('data-status') == 'setNews') {
+        workee.register(params, function (data) {
+            if (data.addedNews) {
+                location.hash = "#newsPage";
+            }
+            else {
+                app.showDialogPage('error', 'ERROR', null, 'Invalid data', 5);
+            }
+            app.hideLoadingPage();
+        });
+    }
+    else {
+        workee.edit(params, function (data) {
+            if (data.addedNews) {
+                location.hash = "#newsPage";
+            }
+            else {
+                app.showDialogPage('error', 'ERROR', null, 'Invalid data', 5);
+            }
+        });
+    }
+}
 app.editPhoto = function (){
     app.showLoadingPage();
     $('#photoVal').on('change', function(){
