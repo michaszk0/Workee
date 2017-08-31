@@ -293,8 +293,8 @@ app.getAbsence = function (){
                                 + '<div class="newsLinePoint"></div>'
                             + '</div>'
                             + '<div class="newsLineText">'
-                                + '<p style="font-weight: bold;margin: 0 0 4px 0;">' + leave.id + '</p>'
-                                + leave.type
+                                + '<p style="font-weight: bold;margin: 0 0 4px 0;">' + leave.title + '</p>'
+                                + leave.id
                             + '</div>'
                         + '</div>'
                     + '</div>'
