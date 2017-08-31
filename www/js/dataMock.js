@@ -16,30 +16,32 @@ dataMock.setNews = {
 	addedNews : true
 };
 
+
 dataMock.getNews = [
 	{
 		"id":1,
 		"user_id":10
-		,"title":"Zarejestrowano nowego pracownika:"
-		,"message":"Kamil Lisowski na stanowisku przedstawiciel handlowy"
+		,"title":"New user was registered:"
+		,"message":"Kamil Lisowski as a Junior Sales Manager"
 		,"displayed_date":"2017-06-16T22:00:00.000Z","added_date":"2017-06-16T22:00:00.000Z"
 	},
 	{
 		"id":2,
 		"user_id":10,
-		"title":"Michał Kamiński jest dzisiaj niedostępny",
+		"title":"Michał Kamiński is absent today",
 		"message":"","displayed_date":"2017-06-16T22:00:00.000Z",
 		"added_date":"2017-06-16T22:00:00.000Z"
 	},
 	{
 		"id":3,
 		"user_id":10,
-		"title":"Szkolenie z Google Tag Manager'a",
-		"message":"Hej, w dniu dzisiejszym o godz 12 odbędzie się szkolenie z Google Tag Manager'a w sali \"Tukan\"",
+		"title":"Google Tag Manager's training",
+		"message":"Hi, today we'll be having a Google Tag Manager's training at 12, in a conference room \"Tukan\"",
 		"displayed_date":"2017-06-16T22:00:00.000Z",
 		"added_date":"2017-06-16T22:00:00.000Z"
 	}
 	];
+
 
 dataMock.setAbsence = {
 	addedAbsence : true
@@ -64,7 +66,7 @@ dataMock.getAbsence = [
 		type : 'VACATION',
 		date : '2017-06-16T22:00:00.000Z'
 	}
-	];
+];
 
 dataMock.getUser = {
 	id : '10',
@@ -73,12 +75,12 @@ dataMock.getUser = {
 	email : 'michal.kaminski@workee.pl',
 	password : 'gjkrheoglsr$fesg2@R$gr2rfeGRE.greg',
 	phone : '668536876',
-	position : 'accountant',
-	website : 'http://test.pl',
+	position : 'Accountant',
+	website : 'http://michalkaminski.pl',
 	desk : '60',
-	scope : 'pierogi zupa',
+	scope : 'Bills, invoices, bookkeeping',
 	birthday : '2017-05-12',
-	interests : 'interests',
+	interests : 'Movies, horror stories, football',
 	photo: 'Michał_Kamiński1497617137946.jpg'
 };
 
@@ -89,12 +91,12 @@ dataMock.getUsers = [
 		surname : 'Kamiński',
 		email : 'michal.kaminski@workee.pl',
 		phone : '668536876',
-		position : 'accountant',
-		website : 'http://test.pl',
+		position : 'Accountant',
+		website : 'http://michalkaminski.pl',
 		desk : '60',
-		scope : 'pierogi zupa',
+		scope : 'Bills, invoices, bookkeeping',
 		birthday : '2017-05-12',
-		interests : 'interests',
+		interests : 'Movies, horror stories, football.',
 		photo: 'Michał_Kamiński1497617137946.jpg'
 	},
 	{

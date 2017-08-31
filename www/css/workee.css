@@ -91,6 +91,36 @@
   margin: 0px 50px;
 }
 
+.news {
+  height: 100%;
+  display: table-cell;
+}
+
+.newsLine {
+  width: 15px;
+  height:100%;
+  float: left;
+  border-right: 2px solid red;
+}
+
+.newsLineSeparator {
+  height: 16%;
+}
+.newsLinePoint {
+  width: 12px;
+  height: 12px;
+  margin-right: -7px;
+  background-color: #ef1a21;
+  border-radius: 12px;
+  float: right;
+}
+
+.newsLineText {
+  width: 80%;
+  margin: 0px 50px;
+}
+
+
 #dialogTitle {
     margin: auto;
     text-align: center;

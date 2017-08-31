@@ -208,7 +208,7 @@ app.register = function (params){
 app.setNews = function (params){
     app.showLoadingPage();
     if ($('#addNewsButton').attr('data-status') == 'setNews') {
-        workee.register(params, function (data) {
+        workee.setNews(params, function (data) {
             if (data.addedNews) {
                 location.hash = "#newsPage";
             }
@@ -278,6 +278,55 @@ app.getNews = function (){
         $('#getNewsResult').html('').append(htmlList);
         app.hideLoadingPage();
     });
+}
+
+app.getAbsence = function (){
+    app.showLoadingPage();
+    workee.getAbsence(function (allLeaves) {
+        var htmlList = ''
+        for(var i=0; i < allLeaves.length; i++){
+            var leave = allLeaves[i];
+            htmlList += '<div class="ui-grid-b">'
+                        + '<div class="news">'
+                            + '<div class="newsLine">'
+                                + '<div class="newsLineSeparator"></div>'
+                                + '<div class="newsLinePoint"></div>'
+                            + '</div>'
+                            + '<div class="newsLineText">'
+                                + '<p style="font-weight: bold;margin: 0 0 4px 0;">' + leave.id + '</p>'
+                                + leave.type
+                            + '</div>'
+                        + '</div>'
+                    + '</div>'
+        }
+        $('#getLeavesResult').html('').append(htmlList);
+        app.hideLoadingPage();
+    });
+}
+
+app.setAbsence = function (params){
+    app.showLoadingPage();
+    if ($('#addAbsenceButton').attr('data-status') == 'setAbsence') {
+        workee.setAbsence(params, function (data) {
+            if (data.addedAbsence) {
+                location.hash = "#leavesPage";
+            }
+            else {
+                app.showDialogPage('error', 'ERROR', null, 'Invalid data', 5);
+            }
+            app.hideLoadingPage();
+        });
+    }
+    else {
+        workee.edit(params, function (data) {
+            if (data.addedAbsence) {
+                location.hash = "#newsPage";
+            }
+            else {
+                app.showDialogPage('error', 'ERROR', null, 'Invalid data', 5);
+            }
+        });
+    }
 }
 
 app.getUsers = function (){
