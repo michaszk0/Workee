@@ -11,7 +11,7 @@ workeeApi = function () {
             }, 1000)
         } else {
             if (device.platform == 'browser') {
-                // alert('Hej jesteś na przegladarce PC i nie kożystasz z mockowania danych. Dlatego aplikacją Ci świruje :)');
+                // alert('Hej, jesteś na przegladarce PC i nie korzystasz z mockowania danych. Dlatego aplikacją Ci świruje :)');
             }
 
             var ajaxParams = {
@@ -43,6 +43,7 @@ workeeApi = function () {
                     }
                     app.hideLoadingPage();
                 },
+
                 error: function (data) {
                     // app.debugMode.error('WorkeeApi: error ' + actionName + ' action', data);
                     app.hideLoadingPage();
@@ -103,6 +104,17 @@ workeeApi = function () {
 		requestAction(actionName, params,  cb);
     };
 
+    var setAbsence = function (cb) {
+	    var actionName = 'setAbsence';
+	    var isDataStorage = fillOutFromStorageData(actionName, cb);
+        requestAction(actionName, null,  cb, isDataStorage);
+    };
+
+    var getAbsence = function (params, cb) {
+	    var actionName = 'getAbsence';
+		requestAction(actionName, params,  cb);
+    };
+
     var register = function (registerParams, cb){
         requestAction('register', registerParams, cb);
     };
@@ -129,5 +141,7 @@ workeeApi = function () {
     	editUser : editUser,
     	getNews : getNews,
     	setNews : setNews,
+    	setAbsence : setAbsence,
+    	getAbsence : getAbsence,
 	}
 }

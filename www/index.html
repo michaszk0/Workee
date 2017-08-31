@@ -23,6 +23,8 @@
 	</head>
 	<body class="ui-page-theme-a" onload="init()">
 
+    <icon src="img/logo.png"/>
+
 		<!--_____________________ LOGIN PAGE____________________ -->
 		<div data-role="page" id="loginPage" data-header-title="Login" data-header-menu="false">
 			<div data-role="main" class="ui-content">
@@ -55,6 +57,8 @@
 							<li><a href="#newsPage" class="ui-btn">News feed</a></li>
 							<li><a href="#addNewsPage" class="ui-btn">Add a news</a></li>
 							<li><a href="#userPage" onclick="app.getUser(app.getFromLocalStorage('userLogged'))" class="ui-btn">My profile</a></li>
+							<li><a href="#leavesPage" class="ui-btn">Leaves</a></li>
+							<li><a href="#setAbsencePage" class="ui-btn">Set a leave</a></li>
 							<li><a href="#peoplePage" class="ui-btn">People</a></li>
 							<li><a href="#registrationPage" class="ui-btn" onclick="app.clearRegistration()">Registration</a></li>
 							<li><a href="#testPage" class="ui-btn">Test</a></li>
@@ -76,7 +80,7 @@
 
 		</div>
 
-		<!--_____________________ ADD NEWS PAGE ____________________ -->
+		<!--_____________________ ADD A NEWS PAGE ____________________ -->
 		<div data-role="page" id="addNewsPage" data-header-title="Add a news" data-header-menu="addNewsPage">
 				<div data-role="main" class="ui-content">
 					<div class="ui-grid-b ui-responsive">
@@ -139,8 +143,6 @@
 			</div>
 		</div>
 
-
-
 		<!--_____________________USER PAGE____________________ -->
 		<div data-role="page" id="userPage" data-header-title="My profile" data-header-menu="userPage">
 			<div data-role="main" class="ui-content">
@@ -169,20 +171,34 @@
 						<p id="interestsUser">Interests/hobbies</p>
 					</div>
 				</div>
-									<a href="#" id="profileEditButton" onclick="app.editUser(app.getFromLocalStorage('userLogged'))" class="ui-btn ui-btn-b ui-shadow ui-corner-all">Edit</a>
-
-
+					<a href="#" id="profileEditButton" onclick="app.editUser(app.getFromLocalStorage('userLogged'))" class="ui-btn ui-btn-b ui-shadow ui-corner-all">Edit</a>
 			</div>
 		</div>
 
-		<!--<div data-role="page" id="userPage">
+        <!--_____________________ LEAVES PAGE____________________ -->
+        <div data-role="page" id="leavesPage" data-header-title="Leaves" data-action-method="getAbsence">
 			<div data-role="main" class="ui-content">
-				<div id="employeeData"></div>
+				<div class="ui-grid-b ui-responsive" id="getLeavesResult"></div>
 			</div>
-		</div>-->
+		</div>
 
 
+		<!--_____________________SET A LEAVE PAGE ____________________ -->
+		<div data-role="page" id="setAbsencePage" data-header-title="Set a leave" data-header-menu="setAbsencePage">
+				<div data-role="main" class="ui-content">
+					<div class="ui-grid-b ui-responsive">
+					</div>
+				</div>
 
+            <form class="formValidation" data-method="setAbsence">
+                <fieldset>
+                    <input id="leaveTitleValue" type="text" name="leaveTitle" placeholder="Your name" required/>
+                    <textarea id="leaveBoxValue" name="leaveBox" placeholder="give some specifics"></textarea>
+                    <input id="addAbsenceButton" data-status="setAbsence" class="submit" type="submit" value="Save" placeholder="Submit"/>
+			    </fieldset>
+			</form>
+
+		</div>
 
 
 
