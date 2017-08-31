@@ -49,22 +49,22 @@ dataMock.setAbsence = {
 
 dataMock.getAbsence = [
 	{
-		id : 1,
-		user_id : 10,
-		type : 'L4',
-		date : '2017-06-16T22:00:00.000Z'
+		"id" : 1,
+		"user_id" : 10,
+		"title" : 'L4',
+		"date" : '2017-06-16T22:00:00.000Z'
 	},
 	{
-		id : 2,
-		user_id : 10,
-		type : 'OTHER',
-		date : '2017-06-16T22:00:00.000Z'
+		"id" : 2,
+		"user_id" : 10,
+		"title" : 'OTHER',
+		"date" : '2017-06-16T22:00:00.000Z'
 	},
 	{
-		id : 3,
-		user_id : 10,
-		type : 'VACATION',
-		date : '2017-06-16T22:00:00.000Z'
+		"id" : 3,
+		"user_id" : 10,
+		"title" : 'VACATION',
+		"date" : '2017-06-16T22:00:00.000Z'
 	}
 ];
 
